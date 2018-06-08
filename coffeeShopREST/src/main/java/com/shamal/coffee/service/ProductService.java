@@ -24,7 +24,7 @@ public class ProductService   {
 	public void delete(Product product) {
 		productRepository.delete(product);
 	}
-
+	
 	public Product getProduct(int productId) {
 		return  productRepository.findOne(productId);
 	}

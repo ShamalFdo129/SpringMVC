@@ -13,9 +13,9 @@ public class HomeController {
 	@Autowired
 	ProductService productService;
 	
-	@GetMapping("/api/student")
-	public Product homePage() {
-		return  productService.getProduct(322);
+	@GetMapping("/api/hello")
+	public String homePage() {
+		return  "Hello from REST API";
 	}
 
 	
