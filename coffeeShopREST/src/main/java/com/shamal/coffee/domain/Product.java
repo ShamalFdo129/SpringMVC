@@ -41,7 +41,7 @@ public class Product {
 	public String getProductName() {
 		return productName;
 	}
-
+	
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
@@ -64,6 +64,11 @@ public class Product {
 
 	public int getId() {
 		return id;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("Product Name: %s , Price: %f , Product Type: %s",this.productName,this.price,this.productType.toString());
 	}
 
 }
