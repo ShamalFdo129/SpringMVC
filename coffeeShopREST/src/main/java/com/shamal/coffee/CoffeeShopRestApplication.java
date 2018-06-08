@@ -21,9 +21,9 @@ public class CoffeeShopRestApplication {
 		TestRestClient.tesingCreateProduct();
 		
 		//Testing Update a product
-		TestRestClient.testingUpdateproduct();
+		//TestRestClient.testingUpdateproduct();
 		
 		//Testing Delete a product
-		TestRestClient.tesingDeleteproduct();
+		//TestRestClient.tesingDeleteproduct();
 	}
 }

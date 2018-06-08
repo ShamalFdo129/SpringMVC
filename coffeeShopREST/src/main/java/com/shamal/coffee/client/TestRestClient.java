@@ -37,10 +37,10 @@ public class TestRestClient {
 	public static void tesingCreateProduct() {
 		
 		Product product=new Product();
-		product.setProductName("Black Coffe");
-		product.setPrice(2.34);
-		product.setProductType(ProductType.BREAKFAST);
-		product.setDescription("This is english black coffe");
+		product.setProductName("Pork curry");
+		product.setPrice(12.57);
+		product.setProductType(ProductType.DINNER);
+		product.setDescription("spicy pork curry with a sandwitch");
 		
 		ResponseEntity<Product> newProduct=restTemplate.postForEntity(serverURL+"/product-api/product/",product, Product.class);
 		productId=newProduct.getBody().getId();

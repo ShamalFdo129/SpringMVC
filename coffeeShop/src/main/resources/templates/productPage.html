@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+	<div class="navbar navbar-inverse bg-inverse">
+		<a class="navbar-brand">Coffee Shop</a>
+	</div>
+	<div class="col-xs-3 p-a-1">
+		<a class="btn btn-block btn-outline-primary" href="/home">Home</a> <a
+			class="btn btn-block btn-outline-primary" href="/products">Products</a>
+		<a class="btn btn-block btn-outline-primary" href="/person">Person</a>
+		<a class="btn btn-block btn-outline-primary" href="/orders">Orders</a>
+	</div>
+
+	<div class="col-xs-9 p-a-1">
+		<form action="/product" method="post">
+			<input type="hidden" name="id" th:value="${product.id}"/>
+			<div class="form-group">
+				<label>Name</label> 
+				<input class="form-control" name="productName" th:value="${product.productName}"/>
+			</div>
+			<div class="form-group">
+				<label>Category</label> 
+				<input class="form-control" name="productType" th:value="${product.productType}"/>
+			</div>
+			<div class="form-group">
+				<label>Description</label>
+				<input class="form-control" name="description" th:value="${product.description}"/>
+			</div>
+			<div class="form-group">
+				<label>Price</label> 
+				<input class="form-control" name="price" th:value="${product.price}"/>
+			</div>
+			<button type="submit" class="btn btn-primary">Save</button>
+			</form>
+			<br/>
+			<form th:action="@{/product/__${product.id}__}" method="post">
+			<button type="submit" class="btn btn-danger">Delete</button>
+		</form> 
+	</div>
+
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-package edu.mum.coffee.config;
+/*package edu.mum.coffee.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -31,4 +31,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("super").password("pw").roles("ADMIN");
 	}
-}
+}*/

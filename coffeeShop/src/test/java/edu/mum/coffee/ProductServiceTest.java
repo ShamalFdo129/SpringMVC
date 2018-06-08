@@ -121,7 +121,7 @@ public class ProductServiceTest {
 			try {
 				List<Product> products = productService.findByTextSearch(testProduct[i].getProductName());
 				for (Product product : products) {
-					productService.delete(product);
+					//productService.delete(product);
 				}
 			} catch (Exception e) {
 				// Do not log exceptions

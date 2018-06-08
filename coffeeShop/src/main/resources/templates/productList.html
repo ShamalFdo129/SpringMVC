@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+	<div class="navbar navbar-inverse bg-inverse">
+		<a class="navbar-brand">Coffee Shop</a>
+	</div>
+	<div class="col-xs-3 p-a-1">
+		<a class="btn btn-block btn-outline-primary" href="/home">Home</a>
+		<a class="btn btn-block btn-outline-primary" href="/products">Products</a>
+		<a class="btn btn-block btn-outline-primary" href="/person">Person</a>
+		<a class="btn btn-block btn-outline-primary" href="/orders">Orders</a>
+	</div>
+
+	<div class="col-xs-9 p-a-1">
+		<table class="table table-sm table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>product Type</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product : ${products}">
+					<td th:text="${product.id}"></td>
+					<td th:text="${product.productName}"></td>
+					<td th:text="${product.description}"></td>
+					<td th:text="${product.price}"></td>
+					<td th:text="${product.productType}"></td>
+					<td>
+					
+						<a class="btn btn-sm btn-warning" th:href="@{/products/__${product.id}__}">Edit</a> 
+						</td>
+				</tr>
+			</tbody>
+		</table>
+		<a class="btn btn-primary" href="/productCreate">Create New Product</a>
+	</div>
+
+
+</body>
+</html>

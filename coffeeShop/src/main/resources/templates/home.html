@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+	<div class="navbar navbar-inverse bg-inverse">
+		<a class="navbar-brand">Coffee Shop</a>
+	</div>
+	<div class="col-xs-3 p-a-1">
+		<a class="btn btn-block btn-outline-primary">Home</a>
+		
+	</div>
+	<div class="col-xs-6 p-a-1">
+		<div th:each="product : ${products}" class="card card-outline-primary">
+			<h4 class="card-header" th:text="${product.productName}"></h4>
+				<span class="p-a-1">Price:</span>
+				 <span
+					class="pull-right tag tag-pill tag-primary"  th:text="${product.price}"> </span>
+			<div class="card-text p-a-1">
+				<span  class="p-a-0 font-weight-bold" th:text="${product.description}"></span>
+				<a class="btn btn-success btn-sm pull-xs-right">Order</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
