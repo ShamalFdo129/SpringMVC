@@ -8,6 +8,7 @@ Futher, REST client template was used to test the REST endpoints.
 Technologies used:
 </br>
 Spring boot MVC</br>
+Thymeleaf template engine</br>
 REST client template</br>
 Hibernate and JPA Annotation</br>
 Spring Securiry</br>
