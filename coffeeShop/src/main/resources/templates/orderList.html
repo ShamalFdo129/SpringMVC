@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Order List</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+	<div class="navbar navbar-inverse bg-inverse">
+		<a class="navbar-brand">Coffee Shop</a>
+	</div>
+	<div class="col-xs-3 p-a-1">
+		<a class="btn btn-block btn-outline-primary" href="/home">Home</a> <a
+			class="btn btn-block btn-outline-primary" href="/products">Products</a>
+		<a class="btn btn-block btn-outline-primary" href="/person">Person</a>
+		<a class="btn btn-block btn-outline-primary" href="/orders">Orders</a>
+	</div>
+
+	<div class="col-xs-9 p-a-1">
+		<table class="table table-sm">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Date</th>
+					<th colspan="2">Order Lines</th>
+					<th></th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="order : ${orders}">
+					<td th:text="${order.person.firstName}"></td>
+					<td th:text="${order.orderDate}"></td>
+					<th>Product</th>
+					<th>Quantity</th>
+					<th>Line Total</th>
+					<td>
+				<tr th:each="line : ${order.orderLines}">
+					<td colspan="2"></td>
+					<td th:text="${line.product.productName}"></td>
+					<td th:text="${line.quantity}"></td>
+					<td th:text="${line.getSubtotal()}"></td>
+				</tr>
+				</td>
+				<td>
+				<tr>
+					<td colspan="5"></td>
+					<td th:text="${order.getTotalAmount()}"></td>
+
+				</tr>
+				</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</body>
+</html>

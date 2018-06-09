@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import edu.mum.coffee.domain.Order;
+import edu.mum.coffee.domain.Person;
 import edu.mum.coffee.domain.Product;
+import edu.mum.coffee.service.OrderService;
+import edu.mum.coffee.service.PersonService;
 import edu.mum.coffee.service.ProductService;
 
 @Controller
@@ -21,6 +25,12 @@ public class AdminController {
 	
 	@Autowired
 	ProductService productService;
+	
+	@Autowired
+	PersonService personService;
+	
+	@Autowired
+	OrderService orderService;
 	
 	@GetMapping("/products")
 	public String productListPage(Model model) {
@@ -52,6 +62,32 @@ public class AdminController {
 		productService.delete(id);
 		return "redirect:/products";
 	}
+	
+	@GetMapping("/person")
+	public String peopleListPage(Model model) {
+		List<Person> people=personService.getAllPeople();
+		model.addAttribute("people", people);
+		return "peopleList";
+	}
+	
+	@GetMapping("/personCreate")
+	public String personCreatePage() {
+		return "createPersonPage";
+	}
+	
+	@PostMapping("/person")
+	public String savePerson(Person person) {
+		personService.savePerson(person);
+		return "redirect:/person";
+	}
+	
+	@GetMapping("/orders")
+	public String orderListPage(Model model) {
+		List<Order> orders=orderService.findAll();
+		model.addAttribute("orders", orders);
+		return "orderList";
+	}
+	
 
 
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Create Person</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+	<div class="navbar navbar-inverse bg-inverse">
+		<a class="navbar-brand">Coffee Shop</a>
+	</div>
+	<div class="col-xs-3 p-a-1">
+		<a class="btn btn-block btn-outline-primary" href="/home">Home</a> <a
+			class="btn btn-block btn-outline-primary" href="/products">Products</a>
+		<a class="btn btn-block btn-outline-primary" href="/person">Person</a>
+		<a class="btn btn-block btn-outline-primary" href="/orders">Orders</a>
+	</div>
+
+	<div class="col-xs-6 p-a-1">
+		<form action="/person" method="post">
+			<div class="form-group">
+				<label>First Name</label> <input class="form-control"
+					name="firstName" />
+			</div>
+			<div class="form-group">
+				<label>Last Name</label> <input class="form-control" name="lastName" />
+			</div>
+			<div class="form-group">
+				<label>Email</label> <input class="form-control" name="email" />
+			</div>
+			<div class="form-group">
+				<label>Phone</label> <input class="form-control" name="phone" />
+			</div>
+			<div class="form-group">
+				<label>City</label> <input class="form-control" name="address.city" />
+			</div>
+			<div class="form-group">
+				<label>State</label> <input class="form-control" name="address.state" />
+			</div>
+			<div class="form-group">
+				<label>Country</label> <input class="form-control" name="address.country" />
+			</div>
+			<button type="submit" class="btn btn-primary">Create</button>
+		</form>
+	</div>
+
+
+</body>
+</html>

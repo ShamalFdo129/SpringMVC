@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>People List</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+	<div class="navbar navbar-inverse bg-inverse">
+		<a class="navbar-brand">Coffee Shop</a>
+	</div>
+	<div class="col-xs-3 p-a-1">
+		<a class="btn btn-block btn-outline-primary" href="/home">Home</a>
+		<a class="btn btn-block btn-outline-primary" href="/products">Products</a>
+		<a class="btn btn-block btn-outline-primary" href="/person">Person</a>
+		<a class="btn btn-block btn-outline-primary" href="/orders">Orders</a>
+	</div>
+
+	<div class="col-xs-9 p-a-1">
+		<table class="table table-sm table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>phone</th>
+					<th>Address</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="person : ${people}">
+					<td th:text="${person.id}"></td>
+					<td th:text="${person.firstName}"></td>
+					<td th:text="${person.lastName}"></td>
+					<td th:text="${person.email}"></td>
+					<td th:text="${person.phone}"></td>
+					<td th:text="${person.address.city+' '+person.address.state+' '+person.address.country}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<a class="btn btn-primary" href="/personCreate">Create New Person</a>
+	</div>
+
+
+</body>
+</html>
