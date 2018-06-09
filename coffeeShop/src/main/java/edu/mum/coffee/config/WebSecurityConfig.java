@@ -1,4 +1,4 @@
-/*package edu.mum.coffee.config;
+package edu.mum.coffee.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +13,10 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
+		http.csrf().disable();
         http
             .authorizeRequests()
-                .antMatchers("/", "/home", "/index").permitAll()
+                .antMatchers("/", "/home", "/index","/register").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -31,4 +32,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("super").password("pw").roles("ADMIN");
 	}
-}*/
+}

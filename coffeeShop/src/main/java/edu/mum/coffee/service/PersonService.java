@@ -20,8 +20,12 @@ public class PersonService {
 		return personRepository.save(person);
 	}
 
-	public List<Person> findByEmail(String email) {
-		return personRepository.findByEmail(email);
+	public Person findByEmail(String email) {
+		List<Person> personList=personRepository.findByEmail(email);
+		if(personList.size()>0)
+			return personList.get(0);
+		else 
+			return null;
 	}
 
 	public Person findById(Long id) {

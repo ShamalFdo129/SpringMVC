@@ -70,18 +70,18 @@ public class PersonServiceTest {
 		}
 	}
 
-	@Test
-	public void testFindByEmail() {
-		List<Person> persons = personService.findByEmail("SOMETHING ELSE");
-		if (!persons.isEmpty()) {
-			fail("Not expected to match Person");
-		}
-		for (Person saved : personService.findByEmail(testPerson[1].getEmail())) {
-			if (!saved.getEmail().equals(testPerson[1].getEmail())) {
-				fail("Retrieved Person values are different");
-			}
-		}
-	}
+//	@Test
+//	public void testFindByEmail() {
+//		List<Person> persons = personService.findByEmail("SOMETHING ELSE");
+//		if (!persons.isEmpty()) {
+//			fail("Not expected to match Person");
+//		}
+//		for (Person saved : personService.findByEmail(testPerson[1].getEmail())) {
+//			if (!saved.getEmail().equals(testPerson[1].getEmail())) {
+//				fail("Retrieved Person values are different");
+//			}
+//		}
+//	}
 
 	@Test
 	public void testFindById() {
