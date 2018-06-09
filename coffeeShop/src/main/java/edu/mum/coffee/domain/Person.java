@@ -21,7 +21,7 @@ public class Person {
 	private Address address;
 	private String phone;
 	private boolean enable;
-
+	
 	public long getId() {
 		return id;
 	}
