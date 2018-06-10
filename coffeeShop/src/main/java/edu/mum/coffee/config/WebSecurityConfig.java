@@ -15,26 +15,7 @@ import edu.mum.coffee.service.AuthenticationService;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable();
-//        http.authorizeRequests()
-//    	.antMatchers("/products/*").hasAuthority("ADMIN")
-//    	.antMatchers("/productCreate/*").hasAuthority("ADMIN")
-//    	.antMatchers("/product/*").hasAuthority("ADMIN")
-//    	.antMatchers("/person/*").hasAuthority("ADMIN")
-//    	.antMatchers("/personCreate/*").hasAuthority("ADMIN")
-//    	.antMatchers("/orders/").hasAuthority("ADMIN")
-//    	.antMatchers("/cart/").hasAuthority("ROLE_USER")
-//        .antMatchers("/**").permitAll()
-//        .anyRequest().authenticated()
-//        .and()
-//    .formLogin().loginPage("/login")
-//    	.permitAll()
-//    	.and()
-//    .logout()
-//    	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-//    	.logoutSuccessUrl("/")
-//        .permitAll();
-		
+		http.csrf().disable();		
 		http
         .authorizeRequests()
             .antMatchers("/", "/home", "/index","/register").permitAll()
